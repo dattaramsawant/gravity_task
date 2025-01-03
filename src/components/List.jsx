@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import SingleCard from "./SingleCard";
 
 const List = (props) => {
-  if (props?.pokemonList.length === 0) {
+  if (props?.pokemonList?.length === 0) {
     return <div className="text-black">No Pokémon found.</div>;
   }
 
