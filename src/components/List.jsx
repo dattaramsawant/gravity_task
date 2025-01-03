@@ -8,9 +8,9 @@ const List = (props) => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {props?.pokemonList.map((pokemon) => (
+      {props?.pokemonList?.map((pokemon) => (
         <Fragment key={pokemon.name} >
-            <SingleCard data={pokemon} />
+          <SingleCard data={pokemon} />
         </Fragment>
       ))}
     </div>
