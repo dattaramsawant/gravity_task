@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 
 export async function getTypes() {
     try {
-        const url=process.env.NEXT_PUBLIC_API_URL+API_ENDPOINT.TYPE
+        const url="https://pokeapi.co/api/v2/"+API_ENDPOINT.TYPE
         const response = await fetch(url,{next: { revalidate: 3600 }})
         const data = await response.json()
         return data.results
@@ -14,7 +14,7 @@ export async function getTypes() {
 
 export async function getPokemonByType(type) {
     try {
-        const url=process.env.NEXT_PUBLIC_API_URL+API_ENDPOINT.TYPE+"/"+type
+        const url="https://pokeapi.co/api/v2/"+API_ENDPOINT.TYPE+"/"+type
         const response = await fetch(url)
         const data = await response.json()
         return data.pokemon
@@ -26,7 +26,7 @@ export async function getPokemonByType(type) {
 
 export async function getAllPokemon() {
     try {
-        const url=process.env.NEXT_PUBLIC_API_URL+API_ENDPOINT.POKEMON
+        const url="https://pokeapi.co/api/v2/"+API_ENDPOINT.POKEMON
         const response = await fetch(url, {cache: "no-cache", revalidate: 3600})
         const data = await response.json()
         return data
@@ -37,7 +37,7 @@ export async function getAllPokemon() {
 
 export async function getPokemonById(id) {
     try {
-        const url=process.env.NEXT_PUBLIC_API_URL+API_ENDPOINT.POKEMON+"/"+id
+        const url="https://pokeapi.co/api/v2/"+API_ENDPOINT.POKEMON+"/"+id
         const response = await fetch(url)
         const data = await response.json()
         return data
